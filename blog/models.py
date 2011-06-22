@@ -8,10 +8,6 @@ class Post(models.Model):
 	title=models.CharField(max_length=100)
 	post=models.TextField()
 	urltitle=models.SlugField(max_length=100)
-	
-	def save(self):
-		self.urltitle = re.sub("\W+" , "-", self.title.lower())
-		super(Post, self).save()
 		
 	def get_absolute_url(self):
 		import datetime
