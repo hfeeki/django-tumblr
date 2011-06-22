@@ -7,7 +7,7 @@ class Post(models.Model):
 	date=models.DateTimeField()
 	title=models.CharField(max_length=100)
 	post=models.TextField()
-	urltitle=models.CharField(max_length=100)
+	urltitle=models.SlugField(max_length=100)
 	
 	def save(self):
 		self.urltitle = re.sub("\W+" , "-", self.title.lower())
