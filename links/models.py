@@ -2,10 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Link(models.Model):
-	link = models.URLField()
-	title= models.CharField(mex_length=100)
+	link = models.URLField(verify_exists=False)
+	title= models.CharField(max_length=100)
 	comment = models.TextField()
 	date= models.DateTimeField()
+	slug =models.SlugField(max_length=100)
 	
 	def __unicode__(self):
 		return self.title
