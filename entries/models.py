@@ -14,11 +14,11 @@ class TumbleItem(models.Model):
 	content_object = generic.GenericForeignKey('content_type', 'object_id')
 	
 	class Meta:
-		ordering = ('pub_date',)
+		ordering = ('-pub_date',)
 	def __unicode__(self):
 		return self.content_type.name
 
-@receiver(post_save, sender=Post)
+@receiver(post_save, Post)
 def my_callback(sender, instance, created, **kwargs):
 	if created:
 		c = ContentType.objects.get_for_model(instance)
