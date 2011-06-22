@@ -14,7 +14,7 @@ class TumbleItem(models.Model):
 	content_object = generic.GenericForeignKey('content_type', 'object_id')
 	
 	class Meta:
-		ordering = ('-pub_date',)
+		ordering = ('pub_date',)
 	def __unicode__(self):
 		return self.content_type.name
 
