@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'tumblog.blog',
 	'tumblog.mytweets',
 	'tumblog.entries',
+	'tumblog.quotes',
 
 
 )
