@@ -98,6 +98,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'tumblog.urls'
@@ -126,9 +127,8 @@ INSTALLED_APPS = (
 	'tumblog.entries',
 	'tumblog.quotes',
 	'tumblog.links',
-	'tumblog.pages',
-
-
+	'django.contrib.sites',
+	'django.contrib.flatpages',
 )
 
 # A sample logging configuration. The only tangible logging

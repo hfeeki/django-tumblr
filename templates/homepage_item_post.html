@@ -1,6 +1,13 @@
 <div class="post">
 	<h2 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ object.title}}</a></h2>
-	<h5>Posted on {{object.date}} by {{ object.author.first_name}}</h5>	
+	<div class="entry-meta">
+		<span class="meta-prep meta-prep-author">Posted on</span> 
+		<span class="entry-date">{{object.date}}</span>
+		<span class="meta-sep">by</span> 
+		<span class="author vcard">{{ object.author.first_name}}</span>	
+	</div>
 	{% load markup %}
-	<p>{{ object.post|markdown}}</p>
+	<div class="entry-content">
+	{{ object.post|markdown}}
+	</div>
 </div>

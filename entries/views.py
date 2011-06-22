@@ -1,6 +1,5 @@
 from django.shortcuts import render_to_response
 from tumblog.entries.models import TumbleItem
-from tumblog.blog.models import Post
 import datetime
 
 
