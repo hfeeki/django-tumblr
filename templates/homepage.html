@@ -2,17 +2,8 @@
 
 {% block title %}WillVanWazer.com {% endblock %}
 
-{%block content %}
-	
-	<h2>Homepage</h2>
-	
-	<ul>
-	{% for TumbleItem in items %}
-	
-		{% if TumbleItem.content_type==Post %}
-	<li><a href="{{ TumbleItem.content_type.get_absolute_url }}" alt="{{ TumbleItem.content_type.title }}">{{ TumbleItem.content_type.title }} , {{ TumbleItem.content_type.author }},</a></li>
-		{% endif %}
-
+{%block content %}	
+	{% for TumbleItem in tumble_item_list %}
+		{{ TumbleItem.get_rendered_html }}
 	{% endfor %}
-	</ul>
 {% endblock %}

@@ -5,5 +5,7 @@ import datetime
 
 
 def homepage(request):
-	items = TumbleItem.objects.all()[:5]
-	return render_to_response('homepage.html', locals())
+	context = {
+		'tumble_item_list' : TumbleItem.objects.all().order_by('-pub_date')[:10]
+	}
+	return render_to_response('homepage.html', context)
