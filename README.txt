@@ -4,9 +4,9 @@ Right now, the following is implemented:
 	-a really, really basic blog post structure
 	-created a container element, called "tumblog" to hold different types of posts
 	-created app for tweets
-	(not much else)
+	-created app for quotes
 	
 To-do:
-	-create apps for quotes, links, images and video
+	-create apps for links, images and video
 	-figure out how to do all that stuff
 	-import the default wordpress theme, and make it work with that
