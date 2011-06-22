@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'tumblog.blog.views.homepage', name='homepage'),
+    url(r'^$', 'tumblog.entries.views.homepage', name='homepage'),
 	url(r'^(\d{4})/(\d{1,2})/(\d{1,2})/(\S+)/$', 'tumblog.blog.views.singlepage', name='single'),
 	#url(r'^(\d{4})/(\d{1,2})/\d{1,2}/$', 'tumblog.blog.views.dayarchive', name='dayarchive'),
     # url(r'^tumblog/', include('tumblog.foo.urls')),

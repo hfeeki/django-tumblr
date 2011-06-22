@@ -18,14 +18,8 @@ class TumbleItem(models.Model):
 	def __unicode__(self):
 		return self.content_type.name
 
-@receiver(post_save)
-def my_callback(sender, **kwargs):
-	if 'created' in kwargs:
-		create=True
-		ctype=ContentType.objects.get_for_model(instance)
-		if ctype.name == 'Tweet':
-			pub_date = instance.pub_time
-		else:
-			pub_date = instance.date
-		if create:
-			t = TumbleItem.objects.get_or_create(content_type=ctype, object_id=instance.id, pub_date=pub_date)
+@receiver(post_save, sender=Post)
+def my_callback(sender, instance, created, **kwargs):
+	if created:
+		c = ContentType.objects.get_for_model(instance)
+		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.date)

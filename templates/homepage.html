@@ -7,9 +7,11 @@
 	<h2>Homepage</h2>
 	
 	<ul>
-	{% for post in posts %}
+	{% for TumbleItem in items %}
 	
-	<li><a href="{{ post.get_absolute_url }}" alt="{{ post.title }}">{{ post.title }} , {{ post.author }},</a></li>
+		{% if TumbleItem.content_type==Post %}
+	<li><a href="{{ TumbleItem.content_type.get_absolute_url }}" alt="{{ TumbleItem.content_type.title }}">{{ TumbleItem.content_type.title }} , {{ TumbleItem.content_type.author }},</a></li>
+		{% endif %}
 
 	{% endfor %}
 	</ul>
