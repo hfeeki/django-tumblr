@@ -121,6 +121,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'tumblog.blog',
+	'tumblog.mytweets',
+	'tumblog.entries',
+
+
 )
 
 # A sample logging configuration. The only tangible logging

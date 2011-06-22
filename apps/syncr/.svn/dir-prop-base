@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 19
+*.pyc
+*~
+syncrtest
+
+K 13
+svn:mergeinfo
+V 25
+/branches/haineault:56-65
+END
