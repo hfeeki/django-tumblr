@@ -1,7 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User 
+
 
 # Create your models here.
 class Link(models.Model):
+#	author=models.ForeignKey(User)
 	link = models.URLField(verify_exists=False)
 	title= models.CharField(max_length=100)
 	comment = models.TextField()

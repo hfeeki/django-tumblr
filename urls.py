@@ -7,6 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'tumblog.entries.views.homepage', name='homepage'),
+	url(r'^page/1$', 'tumblog.entries.views.pageone', name='homepage'),
+	url(r'^page/(\d+)$', 'tumblog.entries.views.page', name='additionalpages'),
 	url(r'^(\d{4})/(\d{1,2})/(\d{1,2})/(\S+)/$', 'tumblog.blog.views.singlepage', name='single'),
 	url(r'^quote/(\d+)/$', 'tumblog.quotes.views.singlequote', name="single_quote"),
 	url(r'^link/(\d{4})/(\d{1,2})/(\d{1,2})/(\S+)/$', 'tumblog.links.views.singlepage', name='single_link'),

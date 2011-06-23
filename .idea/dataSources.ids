@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-version="" uuid="2cee3be7-f0ed-4e42-8aa2-41b0315b92d4">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/Users/Will/Code/sideprojects/tumblog/database.db</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/Library/Preferences/PyCharm10/jdbc-drivers/sqlitejdbc-v056.jar</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

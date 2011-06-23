@@ -2,6 +2,6 @@
 	{% load markup %}
 	<h3><a href="{{ object.get_absolute_url }}">{{ object.quote|markdown}}</a></h3>
 	<p>{{ object.source|markdown}}</p>
-	<h5>Posted on {{object.date}} by {{ object.author.first_name}}</h5>	
+	<div class="entry-meta"><h5>Posted on {{object.date}} by {{ object.author.first_name}}</h5></div>
 	
 </div>

@@ -2,19 +2,27 @@
 
 {% block title %}WillVanWazer.com {% endblock %}
 
-{%block content %}	
+{%block content %}
+	{% if empty %}
+		<h2>Nothing to see here, unfortunately. </h2>
+		<h4>Please visit the <a href="http://127.0.0.1:8000/">
+		homepage</a> to see all of the latest and greatest content.</h4>
+	{% endif %}
 	{% for TumbleItem in tumble_item_list %}
 		{{ TumbleItem.get_rendered_html }}
 	{% endfor %}
 
-    {% if not empty %}
+    {% if more %}
         <br>
         <div id="nav-below" class="navigation">
             <div class="nav-previous">
-                <a href="/page/2"><-- Older posts</a>
+                <a href="/page/{{ next_page }}"><-- Older posts</a>
             </div>
             <div class="nav-next">
+                <a href="/page/{{ previous_page }}">Newer posts--></a>
             </div>
         </div>
     {% endif %}
+
+
 {% endblock %}
