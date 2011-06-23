@@ -1,6 +1,6 @@
 <div class="link">
 	{% load markup %}
-	<h2><a href="{{ object.get_absolute_url }}">{{ object.title|markdown}}</a></h2>
+	<h2 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ object.title|markdown}}</a></h2>
 	<p>{{ object.comment|markdown}}</p>
 	<h5>Posted on {{object.date}}</h5>	
 	

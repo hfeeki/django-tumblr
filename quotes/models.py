@@ -11,3 +11,6 @@ class Quote(models.Model):
 	
 	def __unicode__(self):
 		return self.quote
+	
+	def get_absolute_url(self):
+		return "/quote/%s" % (self.id)

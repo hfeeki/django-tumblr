@@ -1,12 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title }} | Will Van Wazer{% endblock %}
 
 {%block content %}
-	{{whereami}}
-	<h2>This goes here, right?</h2>
-{% endblock %}
+<div class="post">
+	<h1 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ post.title}}</a></h2>
+	<div class="entry-meta">
+		<span class="meta-prep meta-prep-author">Posted on</span> 
+		<span class="entry-date">{{post.date}}</span>
+		<span class="meta-sep">by</span> 
+		<span class="author vcard">{{ post.author.first_name}}</span>	
+	</div>
+	{% load markup %}
+	<div class="entry-content">
+	{{ post.post|markdown}}
+	</div>
+	<div id="comments">
+		{% load disqus_tags %}
+		{% disqus_dev %}
+		{% set_disqus_developer 1 %}
+		{% set_disqus_identifier post.get_absolute_url %}
+		{% set_disqus_url "http://www.willvanwazer.com/" post.get_absolute_url %}
+		{% set_disqus_title post.title %}
+		{% disqus_show_comments %}
+		
+	</div>
+</div>
 
-{%block footer %}
-I'm changing this, bitch.
+
+
+
 {% endblock %}

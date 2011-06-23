@@ -129,7 +129,11 @@ INSTALLED_APPS = (
 	'tumblog.links',
 	'django.contrib.sites',
 	'django.contrib.flatpages',
+	'disqus',
 )
+
+DISQUS_API_KEY= 'g6EMXdjV1Q08skBCEFmdHLEQFmC62JFC3QZ46SyfHTQgHHfmda8eZqlA1XVCWoVh'
+DISQUS_WEBSITE_SHORTNAME = 'willvanwazer'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
