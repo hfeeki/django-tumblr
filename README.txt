@@ -5,8 +5,14 @@ Right now, the following is implemented:
 	-created a container element, called "tumblog" to hold different types of posts
 	-created app for tweets
 	-created app for quotes
+	-created app for links
+	-imported default wordpress theme, and updated to reflect post types
+	-created syncing script for tweets
 	
 To-do:
-	-create apps for links, images and video
-	-figure out how to do all that stuff
-	-import the default wordpress theme, and make it work with that
+	-create apps for images and video
+	-create pages for archive of a specific day, and a month archive of only posts
+	-decide on database solution
+	-decide on deployment method
+	-implement some kind of cron jobs or task management shit
+	-de-crazyify the wordpress template classes and divs

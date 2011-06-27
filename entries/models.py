@@ -41,6 +41,12 @@ def quote_callback(sender, instance, created, **kwargs):
 	if created:
 		c = ContentType.objects.get_for_model(instance)
 		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.date)
+
+@receiver(post_save, sender=Tweet)
+def tweet_callback(sender, instance, created, **kwargs):
+	if created:
+		c = ContentType.objects.get_for_model(instance)
+		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.pub_time)
 		
 ##TO-DO here: implement callbacks for tweets, and other posts as necesary
 # Rename my callback
