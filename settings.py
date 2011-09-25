@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/Will/Code/sideprojects/tumblog/database.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/Users/Will/Code/repo/django_tumblog_pkg/django_tumblog_proj/database.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -69,7 +69,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-	"/Users/Will/Code/sideprojects/tumblog/static",
+    "/Users/Will/Code/repo/django_tumblog_pkg/django_tumblog_proj/static",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -102,10 +102,10 @@ MIDDLEWARE_CLASSES = (
 	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'tumblog.urls'
+ROOT_URLCONF = 'django_tumblog_proj.urls'
 
 TEMPLATE_DIRS = (
-	"/Users/Will/Code/sideprojects/tumblog/templates"
+	"/Users/Will/Code/repo/django_tumblog_pkg/django_tumblog_proj/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -118,19 +118,16 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     # 'django.contrib.staticfiles',
-	'staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
 	'django.contrib.markup',
-    'tumblog.blog',
-	'tumblog.mytweets',
-	'tumblog.entries',
-	'tumblog.quotes',
-	'tumblog.links',
+    'django_tumblog_proj.apps.tumblog.blog',
+	'django_tumblog_proj.apps.tumblog.entries',
+	'django_tumblog_proj.apps.pages',
 	'django.contrib.sites',
-	'django.contrib.flatpages',
+    # 'django.contrib.flatpages',
 	'disqus',
 )
 

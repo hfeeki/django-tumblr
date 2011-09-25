@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | Will Van Wazer{% endblock %}
+
+{%block content %}
+<div class="post">
+	<h1 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ post.title}}</a></h2>
+	{% load markup %}
+	<div class="entry-content">
+	{{ post.post|markdown}}
+	</div>
+</div>
+
+
+
+
+{% endblock %}

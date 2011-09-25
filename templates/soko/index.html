@@ -6,12 +6,12 @@
 		<meta charset="utf-8">
 		<title>{% block title %}{% endblock title %}</title>
 		
-		
-
-		<link rel="stylesheet" href="/static/style.css" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="styles/prettyPhoto.css" />
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
-		
+		<script src="js/jquery.prettyPhoto.js"></script>
+		<script src="js/jquery.custom.js"></script>			
 		
 		<!--[if IE 6]>
             <link rel="stylesheet" href="styles/ie6.css" />
@@ -32,34 +32,28 @@
 			<div id="sidebar">
 			
 				<h1>Will Van Wazer</h1>
-				<p class="tagline">What exactly is a developer-journalist, anyway?</p>
+				<h2>Web Developer</h2>
 				
 					<ul id="nav">	
 						
-					<li><a href="/" title="Home">Home</a><span>/</span></li>
-					{% for page in pages %}
-					<li><a href="{{ page.get_absolute_url }}" title="{{ page.title }}">{{ page.title }}</a><span>/</span></li>						
-					{% endfor %}					
+					<li class="current"><a href="index.php" title="Link To The Home Page">Home</a><span>/</span></li>					
+					<li><a href="services.php" title="Link To The Services Page">Services</a><span>/</span></li>
+					<li><a href="articles.php" title="Link To The Articles Page">Articles</a><span>/</span></li>
+					<li><a href="contact.php" title="Link To The Contact Page">Contact</a></li>
 								
 				</ul><!--end nav-->
 				
 				<div id="bio">
-
-					<h3>About Me</h3>	
-					<img class="author-img" src="http://willvanwazer.com/wp-content/uploads/2011/04/biopic.png" alt="Me!" />				
+								
+					<!-- ADD A PHOTO OF YOURSELF HERE - YOU CAN USE ANY SIZE YOU LIKE, ALTHOUGH THE RECOMMENDED DIMENSIONS ARE 140x150px -->
+					<img class="author-img" src="http://willvanwazer.com/wp-content/uploads/2011/04/biopic.png" alt="Me!" />	
+					
+					<h3>About Me</h3>					
 					<p>I'm a fourth year at UVa, a former developer-journalist intern at the Washington Post, and a Django and Python developer.</p>		
 						
 				</div><!--end bio-->
 				
 				<div class="sidebar-line"></div>
-
-				 <a href="http://www.twitter.com/willvanwazer"><img src="/static/images/icons/twitter_32.png" alt="Twitter"></a> 
-				 <a href="#"><img src="/static/images/icons/github_32.png" alt="Github"></a>
-				 <a href="#"><img src="/static/images/icons/email_32.png" alt="Email"></a>
-
-			{% comment %}
-				
-			
 				
 				<div id="freelance-services">			
 					
@@ -72,7 +66,7 @@
 				</div><!--end freelance-services-->
 				
 				<div class="sidebar-line"></div>			
-		
+			{% comment %}
 				<div id="testimonials">
 				
 					<h3>Client Testimonial</h3>
@@ -91,7 +85,8 @@
 			{% endcomment %}	
 				<div id="footer">		
 					
-					<p>Copyright &copy; 2011 / Will Van Wazer</p>						
+					<p>Copyright &copy; 2011 / [ADD YOUR NAME HERE] / All Rights Reserved</p>	
+						
 				</div><!--end footer-->	
 			
 			</div><!--end sidebar-->

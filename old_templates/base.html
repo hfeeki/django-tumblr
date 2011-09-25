@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.willvanwazer.com/style.css" />
+	
+	
+	</head>
+<body class="home blog">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner"> 
+				<h1 id="site-title"><span> 
+				<a href="http://willvanwazer.com/" title="Will Van Wazer" rel="home">Will Van Wazer</a> 
+				</span></h1> 
+				<div id="site-description">What is a developer-journalist, anyway?</div> 
+			</div><!-- #branding --> 
+			<div id="access" role="navigation"> 
+<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div> 
+
+<div class="menu">
+	<ul>
+		<li class="current_page_item"><a href="http://127.0.0.1:8000/">Home</a></li>
+	    {% for page in pages %}
+	        <li><a href="{{ page.get_absolute_url }}">{{ page.title }}</a></li>
+	    {% endfor %}
+	</ul>
+</div> 
+						</div><!-- #access --> 
+					</div><!-- #masthead --> 
+				</div><!-- #header -->
+<div id="main">
+	<div id="container">
+	<div id="content" role="main">
+	{% block content %}{% endblock %}
+	</div>
+	</div>
+	
+	{% block sidebar %}
+			<div id="primary" class="widget-area" role="complementary">
+	<ul class="xoxo">
+		<li id="text-4" class="widget-container widget_text">
+			<div class="textwidget">
+				<h2 style="color: black; font-weight: bold; margin: 0px 0px 5px 0px;">
+					About Me
+				</h2><img src="http://willvanwazer.com/wp-content/uploads/2011/04/biopic.png" alt="Me!">
+				<p style="color: black; font-size: small;">
+					I'm an aspiring developer, a student at the University of Virginia, principal of Everest Digital Media, and an intern <a href="http://www.washingtonpost.com/" alt="ABC7">here</a> and <a href="http://www.thesabre.com" alt="The Sabre">here</a>.
+				</p>
+			</div>
+		</li>
+		<li id="text-3" class="widget-container widget_text">
+			<div class="textwidget">
+				<a href="http://www.twitter.com/willvanwazer"><img src="http://twitter-badges.s3.amazonaws.com/follow_me-a.png" alt="Follow willvanwazer on Twitter"></a>
+			</div>
+		</li>
+		<li id="twitter-3" class="widget-container widget_twitter">
+			<h3 class="widget-title">
+				<a href='http://twitter.com/willvanwazer'>Twitter Updates</a>
+			</h3>
+			<ul class="tweets">
+				<li>Was thinking of buying git tower. With GitHub for Mac, not any more. <a href="http://twitter.com/willvanwazer/statuses/83581982491148288" class="timesince">4&nbsp;hours&nbsp;ago</a>
+				</li>
+				<li>Thank god for the UVA VPN <a href="http://twitter.com/willvanwazer/statuses/83534543646232577" class="timesince">7&nbsp;hours&nbsp;ago</a>
+				</li>
+				<li>I don't know who thought it was a good idea to block IRC at work, but they were wrong. It blows. <a href="http://twitter.com/willvanwazer/statuses/83534481159491584" class="timesince">7&nbsp;hours&nbsp;ago</a>
+				</li>
+				<li>A comment on one of the commits: "I hate this file." Boy, I've got a fun month ahead of me. <a href="http://twitter.com/willvanwazer/statuses/83180605700964352" class="timesince">1&nbsp;day&nbsp;ago</a>
+				</li>
+				<li>Oh, he wrote my entire project. Interesting. <a href="http://twitter.com/willvanwazer/statuses/83179379609444352" class="timesince">1&nbsp;day&nbsp;ago</a>
+				</li>
+			</ul>
+		</li>
+		<li id="search-2" class="widget-container widget_search">
+			<form role="search" method="get" id="searchform" action="http://willvanwazer.com/" name="searchform">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label> <input type="text" value="" name="s" id="s"> <input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form>
+		</li>
+		<li id="recent-posts-2" class="widget-container widget_recent_entries">
+			<h3 class="widget-title">
+				Recent Posts
+			</h3>
+			<ul>
+				<li>
+					<a href="http://willvanwazer.com/2011/05/10/exams/" title="Exams!">Exams!</a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/2011/05/10/usually-i-can-understand-most-hackernews-headlines/" title="Usually I can understand most HackerNews headlines">Usually I can understand most HackerNews headlines</a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/2011/04/25/this-is-a-big-deal/" title="This is a big deal">This is a big deal</a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/2011/04/25/another-reason-that-i-want-a-standing-desk/" title="Another reason that I want a standing desk">Another reason that I want a standing desk</a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/2011/04/21/good-advice-from-mc-hammer/" title="Good advice from MC Hammer">Good advice from MC Hammer</a>
+				</li>
+			</ul>
+		</li>
+		<li id="linkcat-2" class="widget-container widget_links">
+			<h3 class="widget-title">
+				Blogroll
+			</h3>
+			<ul class='xoxo blogroll'>
+				<li>
+					<a href="http://codex.wordpress.org/">Documentation</a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/extend/plugins/">Plugins</a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/support/">Support Forum</a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/extend/themes/">Themes</a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/news/">WordPress Blog</a>
+				</li>
+				<li>
+					<a href="http://planet.wordpress.org/">WordPress Planet</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div><!-- #primary .widget-area -->
+<div id="secondary" class="widget-area" role="complementary">
+	<ul class="xoxo">
+		<li id="meta-2" class="widget-container widget_meta">
+			<h3 class="widget-title">
+				Meta
+			</h3>
+			<ul>
+				<li>
+					<a href="http://willvanwazer.com/wp-login.php">Log in</a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a>
+				</li>
+				<li>
+					<a href="http://willvanwazer.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>
+				</li>
+				<li>
+					<a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div><!-- #secondary .widget-area -->
+	{% endblock %}
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+	{% block footer %}
+		<div id="site-info">
+			<a href="http://willvanwazer.com/" title="Will Van Wazer" rel="home">Will Van Wazer</a>
+		</div><!-- #site-info -->
+		<div id="site-generator">
+			<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress.</a>
+		</div><!-- #site-generator -->
+	{% endblock %}
+		</div><!-- colophon -->
+	</div><!--footer -->
+	</div><!-- #wrapper --> 
+	
+	</body>
+</html>

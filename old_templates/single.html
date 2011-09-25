@@ -4,9 +4,12 @@
 
 {%block content %}
 <div class="post">
-	<h2 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ post.title}}</a></h2>
+	<h1 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ post.title}}</a></h2>
 	<div class="entry-meta">
-		Posted on {{post.date}} by {{ post.author.first_name}} 	
+		<span class="meta-prep meta-prep-author">Posted on</span> 
+		<span class="entry-date">{{post.date}}</span>
+		<span class="meta-sep">by</span> 
+		<span class="author vcard">{{ post.author.first_name}}</span>	
 	</div>
 	{% load markup %}
 	<div class="entry-content">

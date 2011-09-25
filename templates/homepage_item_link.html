@@ -1,9 +1,8 @@
 <div class="link">
 	{% load markup %}
-	<h2 class="entry-title"><a href="{{ object.get_absolute_url }}">{{ object.title}}</a></h2>
+	<h2 class="title"><a href="{{ object.get_absolute_url }}">{{ object.title}} ➞</a></h2>
 	<p>{{ object.comment|markdown}}</p>
-	<img src="http://www.willvanwazer.com/link.png" class="linkimg">
-
 	<div class="item-meta">Posted on {{object.date}}</div>
 </div>
-<br>
+
+<div class="content-line"></div>

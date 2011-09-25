@@ -1,23 +1,15 @@
 from django.conf.urls.defaults import patterns, include, url
-
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'tumblog.entries.views.homepage', name='homepage'),
-	url(r'^page/1$', 'tumblog.entries.views.pageone', name='homepage'),
-	url(r'^page/(\d+)$', 'tumblog.entries.views.page', name='additionalpages'),
-	url(r'^(\d{4})/(\d{1,2})/(\d{1,2})/(\S+)/$', 'tumblog.blog.views.singlepage', name='single'),
-	url(r'^quote/(\d+)/$', 'tumblog.quotes.views.singlequote', name="single_quote"),
-	url(r'^link/(\d{4})/(\d{1,2})/(\d{1,2})/(\S+)/$', 'tumblog.links.views.singlepage', name='single_link'),
-	#url(r'^archives/(\d{4})/(\d{1,2})/\d{1,2}/$', 'tumblog.entries.views.dayarchive', name='dayarchive'),
-    # url(r'^tumblog/', include('tumblog.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'django_tumblog_proj.apps.tumblog.entries.views.homepage', name='homepage'),
+    url(r'^blog/', include('django_tumblog_proj.apps.tumblog.urls')),
+    url(r'^page/(\S+)/$', 'django_tumblog_proj.apps.pages.views.singlepage'),
 )
+
+urlpatterns += staticfiles_urlpatterns()

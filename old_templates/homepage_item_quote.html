@@ -1,12 +1,12 @@
 <div class="quote">
 	{% load markup %}
-	<h2>{{ object.quote}}</h2>
+	<h2><a href="{{ object.get_absolute_url }}">{{ object.quote}}</a></h2>
 	
 	<p>{{ object.source|markdown}}</p>
+	<img src="http://www.willvanwazer.com/quote.png" class="quoteimg">
 	
 	<div class="item-meta">Posted on {{object.date}} </div>
 	
 	{# Include this later: by {{ object.author.first_name}} #}
 </div>
-
-<div class="content-line"></div>
+<br>
