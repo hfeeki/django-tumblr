@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
-from django_tumblog_proj.apps.tumblog.blog.models import Post, Quote, Link
+from django_tumblog_proj.apps.tumblog.blog.models import Post, Quote, Link, Photo, Video
 from django.db.models.signals import post_save, pre_delete
 from django.dispatch import receiver
 from django.template.loader import render_to_string
@@ -48,7 +48,27 @@ def quote_callback(sender, instance, created, **kwargs):
 		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.date)
 
 @receiver(pre_delete, sender=Quote)
-def link_delete_callback(sender, instance, **kwargs):
+def quote_delete_callback(sender, instance, **kwargs):
+	t = TumbleItem.objects.get(object_id=instance.id, pub_date=instance.date).delete()
+	
+@receiver(post_save, sender=Photo)
+def photo_callback(sender, instance, created, **kwargs):
+	if created:
+		c = ContentType.objects.get_for_model(instance)
+		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.date)
+		
+@receiver(pre_delete, sender=Photo)
+def photo_delete_callback(sender, instance, **kwargs):
+	t = TumbleItem.objects.get(object_id=instance.id, pub_date=instance.date).delete()
+	
+@receiver(post_save, sender=Video)
+def video_callback(sender, instance, created, **kwargs):
+	if created:
+		c = ContentType.objects.get_for_model(instance)
+		t = TumbleItem.objects.get_or_create(content_type=c, object_id=instance.id, pub_date=instance.date)
+
+@receiver(pre_delete, sender=Video)
+def video_delete_callback(sender, instance, **kwargs):
 	t = TumbleItem.objects.get(object_id=instance.id, pub_date=instance.date).delete()
 
 # @receiver(post_save, sender=Tweet)

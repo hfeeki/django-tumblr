@@ -12,7 +12,7 @@ URL: http://www.chris-creed.com
 /* -------------------- */
 /* -- General Styles -- */
 /* -------------------- */
-#wrap { width: 1020px; margin: 0 auto; zoom: 120%; }
+#wrap { width: 1020px; margin: 0 auto; /*zoom: 120%;*/ }
 body { font: 12px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; color: black; background-color: #f1f1f1; }
 h1 { font-size: 38px; margin: 0 0 30px 0; }
 h2 { font-size: 21px; margin: 0 0 30px 0; font-weight: bold; }
@@ -114,4 +114,9 @@ blockquote {
 
 .quote h2:after {
 	content: "\"";
+}
+
+.photo img {
+/*    border-left: 4px solid #d5d5d5;*/
+    padding-left: 10px;
 }

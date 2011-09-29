@@ -1,0 +1,16 @@
+<div class="video">	
+	{% autoescape off %}
+		{{ object.embed_code }}		
+	{% endautoescape %}
+
+	{% load markup %}
+	<div class="entry-content">
+	{{ object.comment|markdown}}
+	</div>
+	
+	<div class="item-meta"><a href="{{ object.get_absolute_url }}">Posted on {{object.date}}</a></div>
+	
+	
+</div>
+
+<div class="content-line"></div>
