@@ -1,6 +1,11 @@
 <div class="photo">	
 	
-	<img src="{{ object.source }}" alt="{{ object.comment }}">
+	{% if object.title %}
+		<h2 class="title"><a href="{{ object.get_absolute_url }}">{{ object.title}}</a></h2>
+	{% endif %}
+	
+	
+	<img src="{{ object.source }}" alt="{{ object.comment }}"  {% if object.width %}width={{ object.width }}{% endif %}>
 
 	{% load markup %}
 	<div class="entry-content">

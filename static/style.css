@@ -117,6 +117,8 @@ blockquote {
 }
 
 .photo img {
-/*    border-left: 4px solid #d5d5d5;*/
-    padding-left: 10px;
+    padding: 5px; 
+    background: #f5f5f5; 
+    border: 1px #eee solid; 
+    margin-bottom: 10px;
 }

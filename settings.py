@@ -129,6 +129,7 @@ INSTALLED_APPS = (
 	'django.contrib.sites',
     # 'django.contrib.flatpages',
 	'disqus',
+	'south',
 )
 
 DISQUS_API_KEY= 'g6EMXdjV1Q08skBCEFmdHLEQFmC62JFC3QZ46SyfHTQgHHfmda8eZqlA1XVCWoVh'

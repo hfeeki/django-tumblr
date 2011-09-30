@@ -44,18 +44,24 @@ class Quote(models.Model):
 		
 class Photo(models.Model):
     """A container for photos to be posted on the blag."""
+    title = models.CharField(blank=True, max_length=100)
     date = models.DateTimeField(default=datetime.datetime.now)
     source = models.URLField(blank=False, verify_exists=False)
     comment = models.TextField(blank=True, null=True)
+    width = models.IntegerField(blank=True, null=True)
     
     def get_absolute_url(self):
         return self.source
         
     def __unicode__(self):
-        return "Photo %s: %s..." % (self.id, self.comment[:10])
+        if self.title:
+            return "Photo %s: %s" % (self.id, self.title)
+        else:
+            return "Photo %s: %s..." % (self.id, self.comment[:10])
         
 class Video(models.Model):
     """A container for videos to be posted on the blag."""
+    title = models.CharField(blank=True, max_length=100)
     date = models.DateTimeField(default=datetime.datetime.now)
     embed_code = models.TextField()
     comment = models.TextField(blank=True)
@@ -64,5 +70,8 @@ class Video(models.Model):
         return "video/%s" % (self.id)
 
     def __unicode__(self):
-        return "Video %s: %s..." % (self.id, self.comment[:10])
+        if self.title:
+            return "Video %s: %s" % (self.id, self.title)
+        else:
+            return "Video %s: %s..." % (self.id, self.comment[:10])
 

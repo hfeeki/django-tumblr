@@ -1,4 +1,9 @@
 <div class="video">	
+	
+	{% if title %}
+		<h2 class="title"><a href="{{ object.get_absolute_url }}">{{ object.title}} ➞</a></h2>
+	{% endif %}
+	
 	{% autoescape off %}
 		{{ object.embed_code }}		
 	{% endautoescape %}
