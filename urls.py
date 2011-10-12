@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     url(r'^blog/', include('django_tumblog_proj.apps.tumblog.urls')),
     url(r'^page/(\S+)/$', 'django_tumblog_proj.apps.pages.views.singlepage'),
 )
-
-urlpatterns += staticfiles_urlpatterns()
+# 
+# urlpatterns += staticfiles_urlpatterns()
