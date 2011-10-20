@@ -99,7 +99,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'django_tumblog_proj.urls'
@@ -117,17 +116,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
 	'django.contrib.markup',
     'django_tumblog_proj.apps.tumblog.blog',
 	'django_tumblog_proj.apps.tumblog.entries',
 	'django_tumblog_proj.apps.pages',
 	'django.contrib.sites',
-    # 'django.contrib.flatpages',
 	'disqus',
 	'south',
 )
